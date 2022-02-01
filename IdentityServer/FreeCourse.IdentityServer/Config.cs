@@ -19,7 +19,11 @@ namespace FreeCourse.IdentityServer
         public static IEnumerable<IdentityResource> IdentityResources =>
                    new IdentityResource[]
                    {
-           
+                    new IdentityResources.Email(),
+                    new IdentityResources.Address(),
+                    new IdentityResources.OpenId(),
+                    new IdentityResources.Profile(),
+                    new IdentityResource(){Name = "roles",DisplayName ="Roles", Description="Kullanıcı Rolleri",UserClaims = new []{"role"} }
                    };
 
         public static IEnumerable<ApiScope> ApiScopes =>
